@@ -1,5 +1,5 @@
 // DECLARE OUR VARIABLES
-let timeIndex = 0;
+const currentDay = moment();
 
 // saveBtn event
 $('.saveBtn').on('click', handleSchedule);
@@ -24,23 +24,25 @@ savedSchedule.push(savedNotes)
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
-const currentDay = moment();
+
 $('#currentDay').text(currentDay.format('dddd, MMMM do'));
+
 console.log(parseInt(currentDay.format('H')))
+console.log($('textarea').data('time'))
 
-$('textarea').each(function() {
-    if (parseInt(currentDay.format('H')) > $('textarea').data('time') ) {
-        $('textarea').addClass('past')
-    }
-    else if (parseInt(currentDay.format('H')) == $('textarea').data('time') ) {
-        $('textarea').addClass('present')
-    }
-    else if (parseInt(currentDay.format('H')) < $('textarea').data('time') ) {
-        $('textarea').addClass('future')
-    }
-})
+for (let timeIndex = 0; timeIndex <= 17; timeIndex++) {
+    const currentTime = $(`#hour${timeIndex}`).data('time');
 
-// console.log(parseInt(currentDay.format('H')))
+    if (parseInt(currentDay.format('H')) > currentTime) {
+        $(`#hour${timeIndex}`).addClass('past')
+    }
+    else if (parseInt(currentDay.format('H')) == currentTime) {
+        $(`#hour${timeIndex}`).addClass('present')
+    }
+    else if (parseInt(currentDay.format('H')) < currentTime) {
+        $(`#hour${timeIndex}`).addClass('future')
+    }
+}
 
 // WHEN I click the save button for that timeblock
 function handleSchedule() {

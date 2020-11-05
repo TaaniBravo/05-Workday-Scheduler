@@ -12,7 +12,7 @@ This program is using momentJS for its time elements.
     5. Resources
 
 ## Visual Example
-![Alt Text](https://media.giphy.com/media/bRpOHPIcH5LnxShyEX/giphy.gif)
+![Alt Text](https://media.giphy.com/media/1L8xEAwMalRij6756h/giphy.gif)
 
 ## User Story
 ```

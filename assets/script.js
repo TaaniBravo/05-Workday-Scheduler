@@ -1,28 +1,26 @@
 // DECLARE OUR VARIABLES
 const currentDay = moment();
 
+// Empty our textareas so that there are no weird spaces from the page loading.
+$('textarea').empty()
+
 // saveBtn event
 $('.saveBtn').on('click', (e) => {
-    savedSchedule.push($(e.target).siblings('textarea').val())
-    console.log(savedSchedule)
+    let hourClicked = $(e.target).siblings('textarea').data('time')
+    let notesSaved = $(e.target).siblings('textarea').val()
+    
+    localStorage.setItem('scheduled-hour-' + hourClicked, notesSaved)
+    console.log(localStorage)
 });
 
-// // Notes Object
-// let savedNotes = {
-//     schedule9am: $('#hour9').val(),
-//     schedule10am: $('#hour10').val(),
-//     schedule11am: $('#hour11').val(),
-//     schedule12pm: $('#hour12').val(),
-//     schedule1pm: $('#hour13').val(),
-//     schedule2pm: $('#hour14').val(),
-//     schedule3pm: $('#hour15').val(),
-//     schedule4pm: $('#hour16').val(),
-//     schedule5pm: $('#hour17').val(),
-// }
-
 // localStorage
-const savedSchedule = JSON.parse(localStorage.getItem('savedSchedule')) || [];
-
+for (let notesIndex = 9; notesIndex <=17; notesIndex++) {
+const savedSchedule = JSON.stringify(localStorage.getItem('scheduled-hour-' + notesIndex));
+    console.log(savedSchedule)
+    if(savedSchedule === null) {
+        $('textarea').empty()
+    }
+}
 // WHEN I open the planner the current day is displayed at the top of the calendar
 $('#currentDay').text(currentDay.format('dddd, MMMM do'));
 
@@ -41,12 +39,3 @@ for (let timeIndex = 9; timeIndex <= 17; timeIndex++) {
         $(`#hour${timeIndex}`).addClass('future')
     }
 }
-
-// WHEN I click the save button for that timeblock (event made on line 5).
-function handleSchedule() {
-
-}
-
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist

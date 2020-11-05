@@ -2,32 +2,33 @@
 const currentDay = moment();
 
 // saveBtn event
-$('.saveBtn').on('click', handleSchedule);
+$('.saveBtn').on('click', (e) => {
+    savedSchedule.push($(e.target).siblings('textarea').val())
+    console.log(savedSchedule)
+});
 
-// Notes Object
-let savedNotes = {
-    schedule9am: $('#hour9').value,
-    schedule10am: $('#hour10').value,
-    schedule11am: $('#hour11').value,
-    schedule12pm: $('#hour12').value,
-    schedule1pm: $('#hour13').value,
-    schedule2pm: $('#hour14').value,
-    schedule3pm: $('#hour15').value,
-    schedule4pm: $('#hour16').value,
-    schedule5pm: $('#hour17').value,
-}
+// // Notes Object
+// let savedNotes = {
+//     schedule9am: $('#hour9').val(),
+//     schedule10am: $('#hour10').val(),
+//     schedule11am: $('#hour11').val(),
+//     schedule12pm: $('#hour12').val(),
+//     schedule1pm: $('#hour13').val(),
+//     schedule2pm: $('#hour14').val(),
+//     schedule3pm: $('#hour15').val(),
+//     schedule4pm: $('#hour16').val(),
+//     schedule5pm: $('#hour17').val(),
+// }
 
 // localStorage
 const savedSchedule = JSON.parse(localStorage.getItem('savedSchedule')) || [];
-savedSchedule.push(savedNotes)
 
 // WHEN I open the planner the current day is displayed at the top of the calendar
 $('#currentDay').text(currentDay.format('dddd, MMMM do'));
 
-console.log(parseInt(currentDay.format('H')))
-console.log($('textarea').data('time'))
-
+// FOR each hour (military time) in the workday we are going to check if it matches the number in our textarea IDs.
 for (let timeIndex = 9; timeIndex <= 17; timeIndex++) {
+    // Our const currentTime is equal to the id 'hour' with the matching with the number of timeIndex.
     const currentTime = $(`#hour${timeIndex}`).data('time');
 
     if (parseInt(currentDay.format('H')) > currentTime) {

@@ -21,16 +21,13 @@ let savedNotes = {
 const savedSchedule = JSON.parse(localStorage.getItem('savedSchedule')) || [];
 savedSchedule.push(savedNotes)
 
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-
+// WHEN I open the planner the current day is displayed at the top of the calendar
 $('#currentDay').text(currentDay.format('dddd, MMMM do'));
 
 console.log(parseInt(currentDay.format('H')))
 console.log($('textarea').data('time'))
 
-for (let timeIndex = 0; timeIndex <= 17; timeIndex++) {
+for (let timeIndex = 9; timeIndex <= 17; timeIndex++) {
     const currentTime = $(`#hour${timeIndex}`).data('time');
 
     if (parseInt(currentDay.format('H')) > currentTime) {
@@ -44,7 +41,7 @@ for (let timeIndex = 0; timeIndex <= 17; timeIndex++) {
     }
 }
 
-// WHEN I click the save button for that timeblock
+// WHEN I click the save button for that timeblock (event made on line 5).
 function handleSchedule() {
 
 }

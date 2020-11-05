@@ -4,6 +4,8 @@ This is the homework assignment for week 5 of UW Coding Bootcamp. Create a simpl
 
 This program is using momentJS for its time elements. 
 
+Live URL: https://taanibravo.github.io/05-Workday-Scheduler/
+
 ## Directory
     1. Visual Example
     2. User Story

@@ -1,131 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
 
-    <header class="jumbotron jumbotron-fluid">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead description">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead time-block"></p>
-    </header>
+<body>
 
-    <main class="container-fluid col-12">
-      <section id="hour-9" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">9AM</p>
-        <textarea name="9am" id="hour9" data-time='9' class='userTextArea col-8 row'>
+  <header class="jumbotron jumbotron-fluid col-12">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead description">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead time-block"></p>
+  </header>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
+  <main class="container-fluid col-md-12 d-flex justify-content-center flex-wrap flex-column">
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">9AM</p>
+      <textarea placeholder="Schedule Event" id="hour9" data-time='9' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-      <section id="hour-10" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">10AM</p>
-        <textarea name="10am" id='hour10' data-time='10' class='userTextArea col-8 row'>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">10AM</p>
+      <textarea placeholder="Schedule Event" id='hour10' data-time='10' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">11AM</p>
+      <textarea placeholder="Schedule Event" id='hour11' data-time='11' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-      <section id="hour-11" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">11AM</p>
-        <textarea name="11am" id='hour11' data-time='11' class='userTextArea col-8 row'>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">12PM</p>
+      <textarea placeholder="Schedule Event" id='hour12' data-time='12' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">1PM</p>
+      <textarea placeholder="Schedule Event" id='hour13' data-time='13' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-      <section id="hour-12" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">12PM</p>
-        <textarea name="12pm" id='hour12' data-time='12' class='userTextArea col-8 row'>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">2PM</p>
+      <textarea placeholder="Schedule Event" id='hour14' data-time='14' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">3PM</p>
+      <textarea placeholder="Schedule Event" id='hour15' data-time='15' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-      <section id="hour-1" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">1PM</p>
-        <textarea name="1pm" id='hour13' data-time='13' class='userTextArea col-8 row'>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">4PM</p>
+      <textarea placeholder="Schedule Event" id='hour16' data-time='16' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
+    <section id="hour-9" class="d-flex col-12 justify-content-center row">
+      <p class="hour col-1 text-right pt-2 pr-4">5PM</p>
+      <textarea placeholder="Schedule Event" id='hour17' data-time='17' class='userTextArea col-8 row'></textarea>
+      <button class="saveBtn col-1 d-flex justify-content-center align-items-center">
+        <i class="far fa-save"></i>
+      </button>
+    </section>
 
-      <section id="hour-2" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">2PM</p>
-        <textarea name="2pm" id='hour14' data-time='14' class='userTextArea col-8 row'>
+  </main>
 
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
-
-      <section id="hour-3" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">3PM</p>
-        <textarea name="3pm" id='hour15' data-time='15' class='userTextArea col-8 row'>
-
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
-
-      <section id="hour-4" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">4PM</p>
-        <textarea name="4pm" id='hour16' data-time='16' class='userTextArea col-8 row'>
-
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
-
-      <section id="hour-5" class="d-flex col-12 justify-content-center">
-        <p class="hour col-1 text-right pt-2 pr-4">5PM</p>
-        <textarea name="5pm" id='hour17' data-time='17' class='userTextArea col-8 row'>
-
-        </textarea>
-        <button class="saveBtn col-1">
-          <i class="far fa-save"></i>
-        </button>
-      </section>
-
-    </main>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/script.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/script.js"></script>
+</body>
 
 </html>

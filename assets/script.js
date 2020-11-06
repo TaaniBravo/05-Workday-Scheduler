@@ -5,14 +5,14 @@ const currentDay = moment();
 $('#currentDay').text(currentDay.format('dddd, MMMM Do'));
 
 // saveBtn event
-$('.saveBtn').on('click', (e) => {
+$('far').on('click', '.saveBtn', (e) => {
     // LET hourClicked equal the buttons clicked sibling textarea's date-time.
-    let hourClicked = $(e.target).siblings('textarea').data('time')
+    let hourClicked = $(this).siblings('textarea').data('time')
     // LET notesSaved equal the buttons clicked sibling textarea's value.
-    let notesSaved = $(e.target).siblings('textarea').val()
+    let notesSaved = $(this).siblings('textarea').val()
     
     localStorage.setItem('hour' + hourClicked, notesSaved)
-
+    console.log(localStorage)
 });
 
 // localStorage

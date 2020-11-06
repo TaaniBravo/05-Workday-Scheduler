@@ -5,15 +5,7 @@ const currentDay = moment();
 $('#currentDay').text(currentDay.format('dddd, MMMM Do'));
 
 // saveBtn event
-$('far').on('click', '.saveBtn', (e) => {
-    // LET hourClicked equal the buttons clicked sibling textarea's date-time.
-    let hourClicked = $(this).siblings('textarea').data('time')
-    // LET notesSaved equal the buttons clicked sibling textarea's value.
-    let notesSaved = $(this).siblings('textarea').val()
-    
-    localStorage.setItem('hour' + hourClicked, notesSaved)
-    console.log(localStorage)
-});
+$('.container').on('click', '.saveBtn', handleStorage)
 
 // localStorage
 // FOR each schedule noted we are placing which text goes where it by a index from 9 to 17.
@@ -50,3 +42,14 @@ for (let timeIndex = 9; timeIndex <= 17; timeIndex++) {
         $(`#hour${timeIndex}`).addClass('future')
     }
 }
+
+function handleStorage(e) {
+    e.preventDefault();
+    // LET hourClicked equal the buttons clicked sibling textarea's date-time.
+    let hourClicked = $(this).parent('section').children('textarea').data('time')
+    // LET notesSaved equal the buttons clicked sibling textarea's value.
+    let notesSaved = $(this).parent('section').children('textarea').val()
+    
+    localStorage.setItem('hour' + hourClicked, notesSaved)
+    console.log(localStorage)
+};

@@ -2,7 +2,7 @@
 const currentDay = moment();
 
 // WHEN I open the planner the current day is displayed at the top of the calendar
-$('#currentDay').text(currentDay.format('dddd, MMMM do'));
+$('#currentDay').text(currentDay.format('dddd, MMMM Do'));
 
 // saveBtn event
 $('.saveBtn').on('click', (e) => {
@@ -12,6 +12,7 @@ $('.saveBtn').on('click', (e) => {
     let notesSaved = $(e.target).siblings('textarea').val()
     
     localStorage.setItem('hour' + hourClicked, notesSaved)
+
 });
 
 // localStorage

@@ -7,12 +7,11 @@ $('#currentDay').text(currentDay.format('dddd, MMMM do'));
 // saveBtn event
 $('.saveBtn').on('click', (e) => {
     // LET hourClicked equal the buttons clicked sibling textarea's date-time.
-    let hourClicked = $(e.target).prev().data('time')
+    let hourClicked = $(e.target).siblings('textarea').data('time')
     // LET notesSaved equal the buttons clicked sibling textarea's value.
-    let notesSaved = $(e.target).prev().val()
+    let notesSaved = $(e.target).siblings('textarea').val()
     
     localStorage.setItem('hour' + hourClicked, notesSaved)
-    console.log(localStorage)
 });
 
 // localStorage
